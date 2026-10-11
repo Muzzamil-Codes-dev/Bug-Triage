@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Frontend (dist is rebuilt by `uv run bug-triage-project`)
+frontend/node_modules/
+frontend/dist/
+
+# Saved triages and the LLM response cache
+data/*.sqlite*
+
+# Secrets
+.env
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.coverage

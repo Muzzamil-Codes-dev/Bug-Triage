@@ -1,0 +1,38 @@
+[project]
+name = "bug-triage-project"
+version = "0.1.0"
+description = "LLM-powered bug triage pipeline (LangGraph + FastAPI) with automated evaluation and human-in-the-loop review"
+readme = "README.md"
+authors = [
+    { name = "Muzzamil-Codes-dev", email = "rasully.m1@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "langchain>=1.4.1",
+    "langchain-openai>=1.6.2",
+    "langgraph>=1.2.11",
+    "langgraph-checkpoint-sqlite>=3.1.1",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.3",
+    "uvicorn>=0.53.0",
+]
+
+[project.scripts]
+bug-triage-project = "bug_triage_project:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.8",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["Test"]
